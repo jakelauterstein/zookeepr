@@ -10,6 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
 
+// make /public readily accessible 
+app.use(express.static('public'));
+
 
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
@@ -120,6 +123,26 @@ app.get('/api/animals/:id', (req, res) => {
   });
 
 
+  //create route to serve up index.html homepage
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+  });
+
+  //create route to serve up the animals listing page
+  app.get('/animals', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/animals.html'));
+  });
+
+  //create route to serve up the zookeepers page
+  app.get('/zookeepers', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+  });
+
+
+  //create route for nonexistent URL
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+  });
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);

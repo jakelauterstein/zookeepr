@@ -108,6 +108,32 @@
         "hungry"
       ],
       "id": "10"
+    },
+    {
+      "name": "Aux",
+      "species": "Feline",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry",
+        "zany",
+        "anxious",
+        "loving",
+        "goofy"
+      ],
+      "id": "11"
+    },
+    {
+      "name": "Vox",
+      "species": "Feline",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry",
+        "zany",
+        "anxious",
+        "loving",
+        "goofy"
+      ],
+      "id": "12"
     }
   ]
 }
